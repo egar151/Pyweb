@@ -11,8 +11,12 @@ Thank you for visiting the site. In this repository I will be uploading all the 
   - runscrip.py (Example)
   - MYSCRIPT.py (Original - not mine. not working )
 
+- Integration of functions with WebPage (Example and Function)
+  - request.py (WebServer Functions)
+  - Templates (Example HTML)
+
 ## Upcoming Projects:
-- Integration of functions with web pages
+- Display Scripts output on WebPage
 
 
 
