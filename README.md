@@ -22,5 +22,5 @@ Thank you for visiting the site. In this repository I will be uploading all the 
 ## Contact me
 You can contact me via 
 - email: eduardo.garcia151@gmail.com
-- Webpage: eduardogarciaruiz.com
+- Webpage: https://eduardogarciaruiz.com
 - linkedin: https://pr.linkedin.com/in/eduardo-garcia-ruiz
