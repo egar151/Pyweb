@@ -14,4 +14,7 @@ def find_replace(filename, find, replace):
     close()
     old_file.close()
     os.remove(file_path)
-    move(abs_path, file_path)
+    if move(abs_path, file_path):
+        return True
+    else:
+        return False
