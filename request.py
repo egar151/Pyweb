@@ -1,8 +1,13 @@
 
+from shelljob import proc
 import os
-from flask import Flask, render_template, request, redirect
+from flask import Flask, render_template, request, redirect, Response, send_file
 from datetime import datetime
 import script
+import eventlet
+eventlet.monkey_patch()
+
+
 app = Flask(__name__)
 
 @app.route('/')
@@ -29,6 +34,24 @@ def step2():
 @app.route('/submit2')
 def submit2():
   return os.system(f"ping -c 3 10.0.0.3")
+
+@app.route( '/stream' )
+def stream():
+    g = proc.Group()
+    p = g.run( [  'ping', '-c 4', '10.0.0.3' ] )
+
+    def read_process():
+        while g.is_pending():   
+            lines = g.readlines(timeout=2.0)
+            for proc, line in lines:
+                yield line.decode('utf-8') + '\n'
+
+    return Response( read_process(), mimetype= 'text/html' )
+
+@app.route('/page')
+def get_page():
+    return send_file('page.html')
+
 
 if __name__ == '__main__':
   app.run(debug=True)
