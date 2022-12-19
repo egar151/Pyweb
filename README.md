@@ -3,7 +3,7 @@
 
 [![Build Status](https://travis-ci.org/joemccann/dillinger.svg?branch=master)](https://travis-ci.org/joemccann/dillinger)
 
-Thank you for visiting the site. In this repository I will be uploading all the scripts created in Python. Currently the library contains the following:
+Thank you for visiting the site. In this repository I will be uploading all my scripts created in Python. Currently the library contains the following:
 
 ## Completed Projects
 - Search and replace (Example and Function)
