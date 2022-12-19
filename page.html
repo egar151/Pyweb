@@ -7,11 +7,20 @@
         document.getElementById("output").innerHTML += event.data + "<br/>"
     }
     </script-->
+    <script>
+        function refreshIFrame() {
+            var x = document.getElementById("Iframe1");
+            x.contentWindow.location.reload();
+            var t = setTimeout(refreshIFrame, 3);
+        }
+    </script>
 </head>
-<body>
+<body onload="refreshIFrame()">
     <h1>Output</h1>
     <div id="output"></div>
-    <iframe src="/stream" title="W3Schools Free Online Web Tutorials" width="700px"height="400" >
+    <iframe src="/stream" title="W3Schools Free Online Web Tutorials" id="Iframe" width="700px"height="400" >
+    </iframe>
+    <iframe src="/stream" title="W3Schools Free Online Web Tutorials" id="Iframe1" width="0px"height="0" >
     </iframe>
 </body>
 </html>

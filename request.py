@@ -60,13 +60,12 @@ def submit2():
 @app.route( '/stream' )
 def stream():
     g = proc.Group()
-    p = g.run( [  'ping', '-c 4', '10.0.0.3' ] )
-
+    p = g.run( [  'ping', '-c 10', '127.0.0.1' ] )
     def read_process():
         while g.is_pending():   
             lines = g.readlines(timeout=2.0)
             for proc, line in lines:
-                yield line.decode('utf-8') + '\n'
+                yield line.decode('utf-8') + '<br/>'
 
     return Response( read_process(), mimetype= 'text/html' )
 
